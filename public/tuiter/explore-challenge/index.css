@@ -1,0 +1,57 @@
+.wd-search-tuiter{
+  left: 10px;
+  bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.wd-border {
+  border: none;
+}
+
+.wd-none-top-bottom-border {
+  border-bottom: none;
+  border-top: none;
+}
+
+.wd-color-gray {
+  color: gray;
+ }
+
+.wd-highlighted {
+  font-weight: bold;
+}
+
+.wd-color-blue {
+  color: rgb(0,128,255);
+}
+
+.wb-main-nav-bar {
+  color: grey;
+  border: none;
+}
+
+.wd-bottom-blue {
+  border-bottom: rgb(0,128,255) solid 4px;
+}
+
+.wb-nav-item:hover {
+  border: none;
+  color: black;
+  font-weight: bold;
+}
+
+.wd-absolute-position {
+  position: absolute;
+  bottom: 35px;
+  left: 0px;
+  font-size: 15px;
+  color: white;
+}
+
+.wd-trender {
+  color: rgb(0,128,255);
+}
+
+.wd-bg-light-gray {
+  background-color: rgb(241, 241, 241);
+}

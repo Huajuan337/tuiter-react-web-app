@@ -8,8 +8,21 @@
   border: white;
 }
 
+.wd-bg-color-green{
+  background-color: darkseagreen;
+}
 
+.wd-bg-color-yellow {
+  background-color: yellow;
+}
 
+.wd-bg-color-blue {
+  background-color: #61dafb;
+}
+
+.wd-color-blue {
+  color: rgb(0,128,255);
+}
 
 
 

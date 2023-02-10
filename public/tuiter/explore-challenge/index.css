@@ -17,6 +17,13 @@
   color: gray;
  }
 
+.wd-color-gold {
+  color: gold;
+}
+
+.wd-color-black {
+  color: black;
+}
 .wd-highlighted {
   font-weight: bold;
 }

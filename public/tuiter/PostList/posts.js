@@ -1,7 +1,7 @@
 
 export default [
     {
-        avatar: "../../images/cat.jpeg",
+        avatar: "../../images/doge.jpeg",
         userName: "Elon Musk",
         handle: "elonmusk",
         time: "23h",
@@ -19,7 +19,7 @@ export default [
         handle: "nypost",
         time: "24h",
         postContent: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-        shareImage: "../../images/tennis.jpeg",
+        shareImage: "../../images/nyp.jpeg",
         shareTopic: "",
         shareContent: "",
         commentNum: "2.3k",

@@ -30,12 +30,11 @@ function PostItem(item) {
                             <i class="fa-solid fa-heart me-1"></i><span>${item.likeNum}</span>
                         </li>
                         <li class="nav-item me-5">
-                            <i class="fa-solid fa-arrow-up-from-bracket me-1"></i><span>${item.shareNum}</span>
+                            <i class="fa-solid fa-retweet me-1"></i><span>${item.shareNum}</span>
                         </li>
                         <li class="nav-item">
-                            <i class="fa-solid fa-retweet me-1"></i><span>4.7K</span>
+                            <i class="fa-solid fa-arrow-up-from-bracket me-1"></i>
                         </li>
-                        
                     </ul>
                 </div>
             </div>

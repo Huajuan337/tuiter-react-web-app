@@ -10,14 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className='container'>
-      <Routes>
-        <Route index
-              element={<Labs/>}/>
-        <Route path="/hello"
-              element={<HelloWorld/>}/>
-        <Route path="/tuiter"
-              element={<Tuiter/>}/>
-      </Routes>
+        <Routes>
+          <Route index element={<Labs/>}/>
+          <Route path="/hello" element={<HelloWorld/>}/>
+          <Route path="/tuiter/*" element={<Tuiter/>}/>
+        </Routes>
       </div>
     </BrowserRouter>
   

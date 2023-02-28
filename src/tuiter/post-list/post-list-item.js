@@ -44,7 +44,7 @@ const PostListItem = (
                             <i className="bi bi-chat me-1"></i><span>{item.commentNum}</span>
                         </li>
                         <li className="nav-item me-5">
-                            <i class="bi bi-heart me-1"></i><span>{item.likeNum}</span>
+                            <i className="bi bi-heart me-1"></i><span>{item.likeNum}</span>
                         </li>
                         <li className="nav-item me-5">
                             <i className="bi bi-arrow-repeat me-1"></i><span>{item.shareNum}</span>

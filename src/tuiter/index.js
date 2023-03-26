@@ -9,8 +9,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import whoReducer from './reducers/who-reducer'; 
 import { configureStore } from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
+import tuitReducer from './reducers/tuits-reducer'
 
-const  store = configureStore({reducer: {who: whoReducer}})
+const  store = configureStore({reducer: {who: whoReducer, tuits: tuitReducer}})
 
 function Tuiter() {
  return (

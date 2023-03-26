@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 const WhoToFollowListItem = (
  {
@@ -9,6 +10,7 @@ const WhoToFollowListItem = (
         <div className="row">
             <div className="col-2 ps-2">
                 <img className="rounded-circle" src={`/images/${who.avatarIcon}`} height="50px" width="50px"/>
+                
             </div>
             <div className="col-6 ps-3">
                 <div className="col fw-bolder">

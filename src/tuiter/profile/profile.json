@@ -1,0 +1,16 @@
+
+
+{
+    "firstName": "Huajuan",
+    "lastName": "Chen",
+    "handle": "@huajuanChen",
+    "profilePicture": "cat2.png",
+    "bannerPicture": "forest.jpeg",
+    "bio": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident",
+    "website": "youtube.com/webdevtv",
+    "location": "Boston, MA",
+    "dateOfBirth": "06/20/1995",
+    "dateJoined":"4/2013",
+    "followingCount": 550,
+    "followersCount": 121
+  }

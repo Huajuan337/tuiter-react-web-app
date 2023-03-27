@@ -35,7 +35,7 @@ const TuitItem = ({
                 <div className="col-10">
                     <div className="mb-1">
                         {tuit.userName} <i className="bi bi-patch-check-fill text-primary me-2"></i>
-                        <span>{tuit.handle} . {tuit.time}</span>
+                        <span>{tuit.handle}<i className="bi bi-dot"></i>{tuit.time}</span>
                         <i className="bi bi-x-lg float-end"
                             onClick={() => deleteTuitHandler(tuit._id)}></i>
                     </div>

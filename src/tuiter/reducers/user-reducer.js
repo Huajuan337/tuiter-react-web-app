@@ -6,10 +6,13 @@ const userSlice = createSlice({
     initialState: user, 
     reducers: {
         updateUser: (state, action) => {
-            // state.user = action.payload;
+            // console.log("action:", action.payload)
+            // state.firstName = action.payload.firstName;
+            // state = action.payload;
             // return state;
             state = {...state, ...action.payload}
             return state;   // need to return the new state 
+        //    console.log("state:", state)
         }   
     }
 });

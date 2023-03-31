@@ -1,6 +1,6 @@
 import React, {useState} from 'react'; 
-// import {updateTuit} from '../reducers/tuits-reducer';
-// import {useDispatch} from 'react-redux';
+import {updateTuit} from '../reducers/tuits-reducer';
+import {useDispatch} from 'react-redux';
 
 
 
@@ -9,7 +9,7 @@ const TuitStats = ({tuit}) => {
     const [liked, setLiked] = useState(tuit.liked);
     const [likes, setLikes] = useState(tuit.likes);
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
     // const  updateLiked= () => {
     //     dispatch(updateTuit(tuit))  
     // };
@@ -21,13 +21,12 @@ const TuitStats = ({tuit}) => {
                     <i className="bi bi-chat me-1"></i><span>{tuit.replies}</span>
                 </li>
                 <li className="nav-item me-5">
-                    <i className={`${tuit.liked? 'bi bi-heart-fill text-danger': 'bi bi-heart'} me-1`} />
-                        {/* id = 'like'
-                        onClick={()=> {
-                            setLiked(!liked)
-                            console.log(!liked)
-                            setLikes(liked? likes-1: likes+1)
-                        }}/> */}
+                    <i className={`${tuit.liked? 'bi bi-heart-fill text-danger': 'bi bi-heart'} me-1`}
+                        onClick={()=> dispatch(updateTuit({
+                            ...tuit,
+                            liked: !tuit.liked,
+                            likes: tuit.liked? tuit.likes-1: tuit.likes+1
+                        }))}/>
 
                     {tuit.liked}
                         

@@ -36,6 +36,10 @@ const tuitsSlice = createSlice({
             const index = state.findIndex(tuit => tuit._id === action.payload);
             state.splice(index, 1);
         },
+        updateTuit(state, action) {
+            const index = state.findIndex(tuit => tuit._id === action.payload._id);
+            state[index] = action.payload;
+        }
     }
 });
 

@@ -15,9 +15,9 @@ const EditProfileComponent = () => {
 
     const dispatch = useDispatch()
     const handleSaveButton = () => {
+        // console.log(profile.lastName)
         dispatch(updateUser(profile))
         navigate('/tuiter/profile')
-        
     };
 
     
@@ -59,18 +59,24 @@ const EditProfileComponent = () => {
                         setFullName(e.target.value);
                         let first_name = e.target.value.split(' ')[0]
                         let last_name = e.target.value.split(' ')[1] ?? ''
-                      
+                        
+                        console.log("before:", first_name, last_name); 
+
                         setProfile({
                             ...profile, 
                             firstName: first_name, 
                             lastName: last_name
                         })
+
+                        // console.log("after", profile.firstName, profile.lastName); 
                         
                     }}
                 ></textarea>
                 <label htmlFor="name">Name</label>
             </div>
-          
+            {/* {profile.firstName}, {profile.lastName} */}
+            {/* console.log("after:", profile.firstName, profile.lastName);  */}
+
             <br/>
 
             {/* edit bio */}

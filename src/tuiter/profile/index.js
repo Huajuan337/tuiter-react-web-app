@@ -8,7 +8,9 @@ import './index.css'
 
 const ProfileComponent = () => {
 
-    const user = useSelector(state => state.user)
+    const user = useSelector(state => state.user); 
+
+    console.log("in prfile screen:", user.firstName, user.lastName)
 
     let navigate = useNavigate()
 

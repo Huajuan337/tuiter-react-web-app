@@ -1,18 +1,13 @@
-import React, {useState} from 'react'; 
-import {updateTuit} from '../reducers/tuits-reducer';
+import React from 'react'; 
+// import {updateTuit} from '../reducers/tuits-reducer';
 import {useDispatch} from 'react-redux';
+import { updateTuitThunk } from '../../services/tuits-thunks';
 
 
 
 const TuitStats = ({tuit}) => {
 
-    const [liked, setLiked] = useState(tuit.liked);
-    const [likes, setLikes] = useState(tuit.likes);
-
-    const dispatch = useDispatch()
-    // const  updateLiked= () => {
-    //     dispatch(updateTuit(tuit))  
-    // };
+    const dispatch = useDispatch();
 
     return(
         <div>
@@ -21,12 +16,13 @@ const TuitStats = ({tuit}) => {
                     <i className="bi bi-chat me-1"></i><span>{tuit.replies}</span>
                 </li>
                 <li className="nav-item me-5">
-                    <i className={`${tuit.liked? 'bi bi-heart-fill text-danger': 'bi bi-heart'} me-1`}
-                        onClick={()=> dispatch(updateTuit({
+                    <i 
+                        onClick={()=> dispatch(updateTuitThunk({
                             ...tuit,
                             liked: !tuit.liked,
                             likes: tuit.liked? tuit.likes-1: tuit.likes+1
-                        }))}/>
+                        }))}
+                        className={`${tuit.liked? 'bi bi-heart-fill text-danger': 'bi bi-heart'} me-1`}/>
 
                     {tuit.liked}
                         

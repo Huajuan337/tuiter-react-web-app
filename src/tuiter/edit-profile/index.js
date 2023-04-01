@@ -60,8 +60,6 @@ const EditProfileComponent = () => {
                         let first_name = e.target.value.split(' ')[0]
                         let last_name = e.target.value.split(' ')[1] ?? ''
                         
-                        console.log("before:", first_name, last_name); 
-
                         setProfile({
                             ...profile, 
                             firstName: first_name, 

@@ -1,46 +1,75 @@
 import { createSlice } from "@reduxjs/toolkit";
-import tuits from '../tuits/tuits.json';
+// import tuits from '../tuits/tuits.json';
+import { deleteTuitThunk, findTuitsThunk,createTuitThunk,updateTuitThunk } from "../../services/tuits-thunks";
 
 
-const currentUser = {
-    "userName": "NASA",
-    "handle": "@nasa",
-    "image": "nasa.jpeg",
-   };
-   
-const templateTuit = {
-    ...currentUser,
-    "topic": "Space",
-    "time": "2h",
-    "liked": false,
-    "replies": 0,
-    "retuits": 0,
-    "likes": 0,
+const initialState = {
+    tuits: [],
+    loading: false,
 }
+
+// const currentUser = {
+//     "userName": "NASA",
+//     "handle": "@nasa",
+//     "image": "nasa.jpeg",
+//    };
+   
+// const templateTuit = {
+//     ...currentUser,
+//     "topic": "Space",
+//     "time": "2h",
+//     "liked": false,
+//     "replies": 0,
+//     "retuits": 0,
+//     "likes": 0,
+// }
    
 
 const tuitsSlice = createSlice({
     name: 'tuits',
-    initialState: tuits, 
-    reducers: {
-        // create a tuit 
-        createTuit(state, action) {
-            state.unshift({
-                ...action.payload,
-                ...templateTuit,   
-                _id: new Date().getTime(),
-            });
+    initialState, 
+    reducers: {},
+    extraReducers: {
+        [findTuitsThunk.pending]: (state, action) => {
+            state.loading = true;
+            state.tuits = [];
         },
 
-        deleteTuit(state, action) {
-            const index = state.findIndex(tuit => tuit._id === action.payload);
-            state.splice(index, 1);
+        [findTuitsThunk.fulfilled]: (state, {payload}) => {
+            state.loading = false;
+            state.tuits = payload;
+        }, 
+        [findTuitsThunk.rejected]: (state, action) => {
+            state.loading = false;
+            state.error = action.error;
+        }, 
+        [deleteTuitThunk.fulfilled]: (state, {payload}) => {
+            state.loading = false;
+            state.tuits = state.tuits.filter(tuit => tuit._id !== payload);
+        }, 
+        [deleteTuitThunk.fulfilled]: (state, action) => {
+            state.loading = false;
+            const tuitNdx = state.tuits.findIndex(tuit => tuit._id === action.payload);
+            state.tuits.splice(tuitNdx, 1);
         },
-        updateTuit(state, action) {
-            const index = state.findIndex(tuit => tuit._id === action.payload._id);
-            state[index] = action.payload;
-        }
+        [createTuitThunk.fulfilled]:(state, { payload }) => {
+            state.loading = false
+            state.tuits.push(payload)
+        },
+        [updateTuitThunk.fulfilled]:(state, { payload }) => {
+            state.loading = false
+            const tuitNdx = state.tuits.findIndex((t) => t._id === payload._id)
+            state.tuits[tuitNdx] = {
+            ...state.tuits[tuitNdx],
+            ...payload
+            }
+        },
+
+
+
+
     }
+
 });
 
 export default tuitsSlice.reducer;

@@ -8,7 +8,7 @@ const TuitsList = () => {
     const {tuits, loading} = useSelector(state => state.tuitsData);   // grabs tuits and loading from reducer
     const dispatch = useDispatch();                                   // dispatches action to reducer
     
-    // invokes when component is first loads
+    // invokes when component is first loads 
     useEffect(() => {
         dispatch(findTuitsThunk())
       }, [])      
@@ -24,7 +24,7 @@ const TuitsList = () => {
                     Loading...
                 </li>
             }
-            
+
             {/* otherwise show the tuits */}
             {
                 !loading &&

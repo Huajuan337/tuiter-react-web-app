@@ -1,10 +1,10 @@
 import axios from 'axios'; 
 
-
-// const TUIT_API = "http://localhost:4000/api/tuits";     // location of HTTP services
+// const TUIT_API = "http://localhost:4000/api/:tuits";     // location of HTTP services
 const API_BASE = process.env.REACT_APP_API_BASE;
 const TUITS_API = `${API_BASE}/tuits`;
 console.log("API_BASE:", API_BASE);
+console.log("API_API:", TUITS_API);
 export const createTuit = async (tuit) => {
     const response = await axios.post(TUITS_API, tuit);  // send HTTP POST request to server
     return response.data;           // data contains response'status we will ignore for now

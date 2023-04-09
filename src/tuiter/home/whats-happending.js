@@ -12,7 +12,7 @@ const WhatsHappening = () => {
     const tuitClickHandler = () => {
         const newTuit = {
             tuit: whatsHappening, 
-            image: 'nasa.jpeg'
+            image: 'https://planetary.s3.amazonaws.com/web/assets/pictures/NASA-logo-adobe-stock.jpg'
         }
         // send tuit as action pauload
         dispatch(createTuitThunk(newTuit));
@@ -22,7 +22,7 @@ const WhatsHappening = () => {
     return (
         <div className="row">
             <div className="col-auto">
-                <img className="rounded-circle ms-2" src="/images/nasa.jpeg " height="50px" width="50px"/>
+                <img className="rounded-circle ms-2" src="https://planetary.s3.amazonaws.com/web/assets/pictures/NASA-logo-adobe-stock.jpg" height="50px" width="50px"/>
             </div>
 
             <div className="col-10">
